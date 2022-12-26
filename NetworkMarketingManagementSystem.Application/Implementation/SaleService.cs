@@ -113,6 +113,12 @@ namespace NetworkMarketingManagementSystem.Application.Implementation
 
             foreach(var sale in sales)
             {
+                Distributor? distributor = null;
+                if (sale.DistributorId != 0 && sale.DistributorId is not null)
+                {
+                    distributor = await _distributorRepository.ReadNoTrackingAsync(sale.DistributorId.Value);
+                }
+                
                 var productsInSale = products.Where(x => sale.SaleProducts.Select(a => a.ProductId).ToList().Contains(x.Id));
 
                 var soldproductsdetails = new List<ProductSoldDetails>();
@@ -134,8 +140,13 @@ namespace NetworkMarketingManagementSystem.Application.Implementation
                 {
                     Id = sale.Id,
                     DistributorId = sale.DistributorId,
+                    DistributorFirstName = distributor?.FirstName,
+                    DistributorLastName = distributor?.LastName,
                     SaleDate = sale.SaleDate,
                     TotalPrice = sale.TotalPrice,
+                    ProductIds = soldproductsdetails.Select(x => x.Id).ToList(),
+                    ProductNames = soldproductsdetails.Select(x => x.Name).ToList(),
+                    ProductCodes = soldproductsdetails.Select(x => x.Code).ToList(),
                     ProductsSoldDetails = soldproductsdetails
                 };
 
