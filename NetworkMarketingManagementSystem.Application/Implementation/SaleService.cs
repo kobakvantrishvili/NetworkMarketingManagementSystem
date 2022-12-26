@@ -31,6 +31,9 @@ namespace NetworkMarketingManagementSystem.Application.Implementation
 
         public async Task<(Status, int?)> CreateSaleAsync(SaleServiceModel sale)
         {
+            if(sale is null)
+                return (Status.BadRequest, null);
+
             // Check if such distributor Exists
             if (!await _distributorRepository.Exists(x => x.Id == sale.DistributorId)) 
                 return (Status.BadRequest, null);

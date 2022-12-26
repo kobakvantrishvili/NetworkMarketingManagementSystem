@@ -45,7 +45,7 @@ namespace NetworkMarketingManagementSystem.Controllers.APIControllers
         ///
         /// </remarks>
         /// <response code="201">Created a new sale data entry</response>
-        /// <response code="400">Distributor or Product doesn't exists</response>
+        /// <response code="400">Sale passed is null or Distributor or Product doesn't exists</response>
         [HttpPost("Create")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

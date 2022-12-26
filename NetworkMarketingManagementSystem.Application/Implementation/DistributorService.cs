@@ -49,6 +49,9 @@ namespace NetworkMarketingManagementSystem.Application.Implementation
 
         public async Task<(Status, int?)> CreateDistributorAsync(DistributorServiceModel distributor)
         {
+            if (distributor is null)
+                return (Status.BadRequest, null);
+
             var distributorExists = await _distributorRepository.Exists(x => x.IdentityDocument.PersonalNumber == distributor.IdentityDocument.PersonalNumber);
             if (distributorExists)
                 return (Status.Conflict, null);
@@ -115,6 +118,8 @@ namespace NetworkMarketingManagementSystem.Application.Implementation
 
         public async Task<Status> UpdateDistributorAsync(DistributorServiceModel distributor)
         {
+            if (distributor is null)
+                return Status.BadRequest;
             var distr = await _distributorRepository.ReadAsync(distributor.Id);
             if (distr is null)
                 return Status.NotFound;

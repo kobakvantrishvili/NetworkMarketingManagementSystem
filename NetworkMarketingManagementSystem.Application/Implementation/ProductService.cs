@@ -24,6 +24,9 @@ namespace NetworkMarketingManagementSystem.Application.Implementation
 
         public async Task<(Status, int?)> CreateProductAsync(ProductServiceModel product)
         {
+            if (product is null)
+                return (Status.BadRequest, null);
+
             var productExists = await _productRepository.Exists(x => x.Code == product.Code);
             if (productExists)
                 return (Status.Conflict, null);
@@ -34,6 +37,8 @@ namespace NetworkMarketingManagementSystem.Application.Implementation
 
         public async Task<Status> UpdateProductAsync(ProductServiceModel product)
         {
+            if (product is null)
+                return Status.BadRequest;
 
             var prdct = await _productRepository.ReadAsync(product.Id);
             if(prdct is null)

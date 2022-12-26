@@ -35,9 +35,11 @@ namespace NetworkMarketingManagementSystem.Controllers.APIControllers
         ///
         /// </remarks>
         /// <response code="201">Created a new product data entry</response>
+        /// <response code="400">Product passed is null</response>
         /// <response code="409">Product already exists</response>
         [HttpPost("Create")]
         [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status409Conflict)]
         public async Task<IActionResult> Create([FromBody] ProductCreateRequest product)
         {
@@ -84,10 +86,12 @@ namespace NetworkMarketingManagementSystem.Controllers.APIControllers
         ///
         /// </remarks>
         /// <response code="200">Succesfully updated Product</response>
+        /// <response code="400">Product passed is null</response>
         /// <response code="404">Product not found</response>
         /// <response code="409">Product code can't match another product's code</response>
         [HttpPut("Update")]
         [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Update([FromBody] ProductUpdateRequest product)

@@ -56,10 +56,12 @@ namespace NetworkMarketingManagementSystem.Controllers.APIControllers
         ///
         /// </remarks>
         /// <response code="201">Created a new distributor data entry</response>
+        /// <response code="400">Distributor passed is null</response>
         /// <response code="403">Distributor does not fit the hierarchy</response>
         /// <response code="409">Distributor with same PersonalNumber already exists</response>
         [HttpPost("Create")]
         [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status409Conflict)]
         public async Task<IActionResult> Create([FromBody] DistributorCreateRequest distributor)
@@ -127,7 +129,7 @@ namespace NetworkMarketingManagementSystem.Controllers.APIControllers
         ///
         /// </remarks>
         /// <response code="200">Succesfully updated Distributor</response>
-        /// <response code="400">Distributor's recommender does not exist or there is circular reference</response>
+        /// <response code="400">Distributor passed is null, Distributor's recommender does not exist or there is a circular reference</response>
         /// <response code="403">Distributor does not fit the hierarchy</response>
         /// <response code="404">Distributor not found</response>
         [HttpPut("Update")]
