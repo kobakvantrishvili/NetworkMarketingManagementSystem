@@ -15,7 +15,7 @@ namespace NetworkMarketingManagementSystem.Application.Models
         public string DistributorLastName { get; set; }
         public List<int> SaleIds { get; set; }
         public DateTime StartDate { get; set; }
-        public DateTime EndtDate { get; set; }
+        public DateTime EndDate { get; set; }
         public decimal Amount { get; set; }
     }
 }

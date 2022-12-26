@@ -31,7 +31,7 @@ namespace NetworkMarketingManagementSystem.Persistence.MongoDb.Models
 
 
         [BsonElement("enddate")]
-        public DateTime EndtDate { get; set; }
+        public DateTime EndDate { get; set; }
 
 
         [BsonElement("amount")]

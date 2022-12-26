@@ -73,7 +73,7 @@ namespace NetworkMarketingManagementSystem.Application.Implementation
                     DistributorLastName = distributor.LastName,
                     SaleIds = salesIds,
                     StartDate = startDate,
-                    EndtDate = endDate,
+                    EndDate = endDate,
                     Amount = BonusAmount,
                 };
                 bonusesToAdd.Add(bonus);
@@ -88,11 +88,11 @@ namespace NetworkMarketingManagementSystem.Application.Implementation
 
         public async Task<Status> DeleteBonusesAsync(DateTime startDate, DateTime endDate)
         {
-            var bonuses = await _bonusRepository.ReadAsync(x => (x.StartDate >= startDate) && (x.EndtDate <= endDate));
+            var bonuses = await _bonusRepository.ReadAsync(x => (x.StartDate >= startDate) && (x.EndDate <= endDate));
             if (!bonuses.Any())
                 return Status.NotFound;
 
-            await _bonusRepository.DeleteAsync(x => (x.StartDate >= startDate) && (x.EndtDate <= endDate));
+            await _bonusRepository.DeleteAsync(x => (x.StartDate >= startDate) && (x.EndDate <= endDate));
             return (Status.Success);
         }
 
