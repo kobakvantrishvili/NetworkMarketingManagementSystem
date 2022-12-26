@@ -37,4 +37,8 @@
     <ProjectReference Include="..\NetworkMarketingManagementSystem.Persistence\NetworkMarketingManagementSystem.Persistence.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
 </Project>
