@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkMarketingManagementSystem", "NetworkMarketingManagementSystem.csproj", "{C30AE5E5-FEAD-4BB4-AECA-EC3F23F80D6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkMarketingManagementSystem.Domain", "..\NetworkMarketingManagementSystem.Domain\NetworkMarketingManagementSystem.Domain.csproj", "{0A3C7D43-4B0E-4A72-A685-7F1A57E20329}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkMarketingManagementSystem.Persistence", "..\NetworkMarketingManagementSystem.Persistence\NetworkMarketingManagementSystem.Persistence.csproj", "{B2ACF1EA-4C7A-465C-ABA4-3AADB6A8DC62}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0A3C7D43-4B0E-4A72-A685-7F1A57E20329} = {0A3C7D43-4B0E-4A72-A685-7F1A57E20329}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkMarketingManagementSystem.Application", "..\NetworkMarketingManagementSystem.Application\NetworkMarketingManagementSystem.Application.csproj", "{9DD6C04F-92AF-40ED-933D-5794BEF138A6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A2507DD3-4FFD-4276-9922-2F793A50CD29}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C30AE5E5-FEAD-4BB4-AECA-EC3F23F80D6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C30AE5E5-FEAD-4BB4-AECA-EC3F23F80D6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C30AE5E5-FEAD-4BB4-AECA-EC3F23F80D6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C30AE5E5-FEAD-4BB4-AECA-EC3F23F80D6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A3C7D43-4B0E-4A72-A685-7F1A57E20329}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A3C7D43-4B0E-4A72-A685-7F1A57E20329}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A3C7D43-4B0E-4A72-A685-7F1A57E20329}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A3C7D43-4B0E-4A72-A685-7F1A57E20329}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2ACF1EA-4C7A-465C-ABA4-3AADB6A8DC62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2ACF1EA-4C7A-465C-ABA4-3AADB6A8DC62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2ACF1EA-4C7A-465C-ABA4-3AADB6A8DC62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2ACF1EA-4C7A-465C-ABA4-3AADB6A8DC62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DD6C04F-92AF-40ED-933D-5794BEF138A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DD6C04F-92AF-40ED-933D-5794BEF138A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DD6C04F-92AF-40ED-933D-5794BEF138A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DD6C04F-92AF-40ED-933D-5794BEF138A6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4AC10E3E-B47A-46A1-8121-B3491001D2B2}
+	EndGlobalSection
+EndGlobal
